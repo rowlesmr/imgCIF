@@ -19,7 +19,7 @@ when reading and writing data names (the data names themselves are
 identical). The following caveats to this ideal situation currently apply:
 
 1. The DDLm imgCIF dictionary inherits `DIFFRN`-linked
-categories from the [multi-block dictionary](https://github.com/COMCIFS/cif_multiblock)
+categories from the [multiblock coreCIF dictionary](https://github.com/COMCIFS/cif_core_multiblock)
 rather than [PDBx/mmCIF](https://mmcif.wwpdb.org). That is,
 unlike mmCIF, `DIFFRN_DETECTOR`, `DIFFRN_RADIATION` and `DIFFRN_MEASUREMENT` do
 *not* include a data name linked to `_diffrn.id` as a key data name. An issue
@@ -49,13 +49,13 @@ The DDLm version was automatically obtained from the DDL2 version by running the
 commands:
 
 ```
-julia ddl_to_ddl.jl -c multi_block_core.dic -i --short --strict -t CIF_IMG -o cif_img.dic cbf_imgcif_dictionary/ddl2/cif_img.dic ddl2
+julia ddl_to_ddl.jl -c cif_core_multiblock.dic -i --short --strict -t CIF_IMG -o cif_img.dic cbf_imgcif_dictionary/ddl2/cif_img.dic ddl2
 ```
 
 using the `ddl_to_ddl.jl` and `remove_category.jl` tools and associated DDL
 translation dictionaries from the `https://github.com/jamesrhester/ddl_to_ddl`
-repository and the `multi_block_core.dic` found in the [COMCIFS Multi-Block
-dictionary repository](https://github.com/COMCIFS/cif_multiblock).  A [COMCIFS
+repository and the `cif_core_multiblock.dic` found in the [COMCIFS Multiblock coreCIF
+dictionary repository](https://github.com/COMCIFS/cif_core_multiblock).  A [COMCIFS
 fork of the DDL2 imgCIF
 dictionary](https://github.com/COMCIFS/cbf_imgcif_dictionary) was used as the
 DDL2 dictionary source.  Currently this fork contains some corrections for
@@ -70,12 +70,12 @@ translated DDLm dictionary to preserve information not captured by DDLm
 attributes. For details see the `ddl_to_ddl` tool. The additional attributes
 are later dropped (see below).
 
-2. Any common categories defined to be of class `Set` in `multi_block_core.dic` are
+2. Any common categories defined to be of class `Set` in `cif_core_multiblock.dic` are
 restated to be `Set` categories in the translated dictionary
 
 3. The dictionary title is changed to `cif_img` to conform to DDLm style.
 
-4. (`--short`): The import of `multi_block_core.dic` in the emitted DDLm
+4. (`--short`): The import of `cif_core_multiblock.dic` in the emitted DDLm
 dictionary will not specify a directory for simplicity in testing. This implies
 that all dictionaries are in the same directory.
 
