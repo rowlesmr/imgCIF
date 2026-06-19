@@ -11,7 +11,7 @@ data_VARIANT_DIC
     _dictionary.title             VARIANT_DIC
     _dictionary.class             Instance
     _dictionary.version           1.0.0
-    _dictionary.date              2026-05-14
+    _dictionary.date              2026-06-18
     _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
     _description.text

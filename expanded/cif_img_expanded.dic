@@ -5,7 +5,7 @@ data_CIF_IMG.DIC
     _dictionary.title             cif_img.dic
     _dictionary.class             Instance
     _dictionary.version           1.8.9
-    _dictionary.date              2026-05-14
+    _dictionary.date              2026-06-18
     _dictionary.ddl_conformance   4.2.0
     _dictionary.namespace         CifCore
     _description.text
@@ -774,8 +774,8 @@ save_HEAD
     _name.object_id               HEAD
 
     _import.get
-        [{'dupl':Ignore  'file':multi_block_core.dic  'mode':Full
-          'save':multiblock_core}]
+        [{'dupl':Ignore  'file':cif_core_multiblock.dic  'mode':Full
+          'save':CIF_CORE_MULTIBLOCK_HEAD}]
 
 save_
 
@@ -14103,7 +14103,7 @@ save_
       _dictionary_audit.version
       _dictionary_audit.date
       _dictionary_audit.revision
-         1.8.9                    2026-05-14
+         1.8.9                    2026-06-18
 ;
    Addition of missing diffrn.id pointers
 
